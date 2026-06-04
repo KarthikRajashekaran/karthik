@@ -5,10 +5,12 @@
 | Thing | Visibility | URL / location |
 |-------|------------|----------------|
 | **Live site** | **Public** (anyone on the internet) | https://karthikrajashekaran.github.io/karthik/ |
-| **GitHub repo** | **Private** (only you when logged into GitHub) | https://github.com/KarthikRajashekaran/karthik |
+| **GitHub repo** | **Public** (required on GitHub Free for Pages) | https://github.com/KarthikRajashekaran/karthik |
 | **Local project** | On your laptop only | Clone + `npm run dev` |
 
-Pushing to `main` triggers **GitHub Actions** → builds and publishes the **public** site. The repo stays private; the HTML on Pages is still world-readable (by design).
+Pushing to `main` triggers **GitHub Actions** → builds and publishes the **public** site.
+
+> **Important:** On **GitHub Free**, **private repos cannot use GitHub Pages**. Making the repo private removed the site (404). The repo is **public** again so Pages works. The **website** is still only promoted via your link; the **source code** is visible on GitHub. For private code + public site you need **GitHub Pro** (~$4/mo) or host on Cloudflare Pages / Netlify.
 
 ---
 
@@ -20,7 +22,7 @@ Pushing to `main` triggers **GitHub Actions** → builds and publishes the **pub
 - [Node.js 22+](https://nodejs.org) (matches `package.json` `engines`)
 - Optional: [GitHub CLI](https://cli.github.com) — `brew install gh && gh auth login`
 
-### 2. Clone (you must have repo access)
+### 2. Clone
 
 ```bash
 mkdir -p ~/karu-github && cd ~/karu-github
@@ -32,9 +34,7 @@ npm run dev
 
 Preview: **http://localhost:4321/karthik/**
 
-### 3. GitHub authentication
-
-Private repos require auth to clone/push:
+### 3. GitHub authentication (for push)
 
 ```bash
 # SSH (recommended): add key in GitHub → Settings → SSH and GPG keys
@@ -90,13 +90,20 @@ git add public/ src/data/site.ts && git commit -m "chore: update resume" && git 
 
 ---
 
-## Private repo + public Pages (already configured)
+## Repo visibility vs live site
 
-- Repo visibility: **Private** — code, commits, Actions logs visible only to you (and collaborators you add).
-- **GitHub Pages** from a private personal repo still serves a **public** website (GitHub policy for personal accounts).
-- Do **not** put secrets, API keys, or employer-confidential content in the repo; Pages output is public.
+| GitHub plan | Private repo + Pages |
+|-------------|----------------------|
+| **Free** | **Not supported** — Pages disabled → site 404 |
+| **Pro** | Supported — private repo, **public** Pages URL |
 
-To confirm Pages source: **Repo → Settings → Pages → Build and deployment → GitHub Actions**.
+If the site shows **404 There isn't a GitHub Pages site here**:
+
+1. Repo → **Settings → Pages** — ensure **GitHub Actions** is the source.
+2. **Actions** — last **Deploy to GitHub Pages** must be green.
+3. On Free plan, repo must be **public** (Settings → General → Change visibility).
+
+Do **not** put secrets in the repo; built HTML is public either way.
 
 ---
 
