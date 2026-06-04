@@ -2,9 +2,13 @@
 
 Static personal site (data engineering + AI): home, resume, and writing links. Built with [Astro](https://astro.build) and hosted free on [GitHub Pages](https://pages.github.com/).
 
-## Live URL (after deploy)
+**Live (public):** https://karthikrajashekaran.github.io/karthik/  
+**Repo:** private — only you see code on GitHub when logged in.  
+**New machine / URL options:** see [SETUP.md](./SETUP.md).
 
-`https://KarthikRajashekaran.github.io/karthik/`
+## Live URL
+
+`https://karthikrajashekaran.github.io/karthik/`
 
 ## Local development
 
