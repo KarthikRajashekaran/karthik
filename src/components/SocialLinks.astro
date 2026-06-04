@@ -4,13 +4,9 @@ import { path } from '../lib/paths';
 
 const resumeHref = path(site.resume.file);
 
+const resumeIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`;
+
 const items = [
-	{
-		label: 'Resume',
-		href: resumeHref,
-		download: site.resume.downloadName,
-		icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
-	},
 	{
 		label: 'LinkedIn',
 		href: site.links.linkedin,
@@ -25,6 +21,12 @@ const items = [
 		label: 'Medium',
 		href: site.links.medium,
 		icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zm3.38 0c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/></svg>`,
+	},
+	{
+		label: 'Resume',
+		href: resumeHref,
+		download: site.resume.downloadName,
+		icon: resumeIcon,
 	},
 	{
 		label: 'Email',
