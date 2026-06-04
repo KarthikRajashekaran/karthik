@@ -8,62 +8,115 @@ const links = [
 	{ href: path('writing/'), label: 'Writing' },
 ];
 
-const current = Astro.url.pathname;
+const p = Astro.url.pathname;
+const page =
+	p.includes('/resume') ? 'resume' : p.includes('/writing') ? 'writing' : 'home';
 ---
 
-<header class="nav">
-	<a class="brand" href={path()}>{site.name.split(' ')[0]}</a>
-	<nav aria-label="Main">
-		<ul>
-			{
-				links.map(({ href, label }) => (
-					<li>
-						<a
-							href={href}
-							aria-current={current === href || current === href.replace(/\/$/, '') + '/' ? 'page' : undefined}
-						>
-							{label}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</nav>
+<header class="nav-wrap">
+	<div class="nav">
+		<a class="brand" href={path()}>
+			<span class="brand-mark" aria-hidden="true">K</span>
+			<span>{site.name.split(' ')[0]}</span>
+		</a>
+		<nav aria-label="Main">
+			<ul>
+				{
+					links.map(({ href, label }) => {
+						const key =
+							label === 'Home' ? 'home' : label === 'Resume' ? 'resume' : 'writing';
+						return (
+							<li>
+								<a href={href} aria-current={page === key ? 'page' : undefined}>
+									{label}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</nav>
+	</div>
 </header>
 
 <style>
+	.nav-wrap {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		padding: 0.75rem 1.5rem;
+		background: rgba(8, 12, 20, 0.75);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--border);
+	}
+
 	.nav {
 		max-width: var(--max);
 		margin: 0 auto;
-		padding: 1.25rem 1.25rem 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
 	}
+
 	.brand {
-		font-weight: 650;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		font-weight: 700;
+		font-size: 1.05rem;
+		color: var(--text);
+		text-decoration: none;
+		letter-spacing: -0.02em;
+	}
+
+	.brand:hover {
 		color: var(--text);
 		text-decoration: none;
 	}
-	.brand:hover {
-		color: var(--accent);
-		text-decoration: none;
+
+	.brand-mark {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 8px;
+		background: var(--gradient);
+		color: #0f172a;
+		font-size: 0.95rem;
+		font-weight: 800;
 	}
+
 	nav ul {
 		display: flex;
-		gap: 1.25rem;
+		gap: 0.35rem;
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		font-size: 0.9375rem;
+		font-size: 0.9rem;
 	}
+
 	nav a {
+		display: block;
+		padding: 0.45rem 0.85rem;
+		border-radius: 8px;
 		color: var(--muted);
 		text-decoration: none;
+		transition:
+			background 0.2s ease,
+			color 0.2s ease;
 	}
-	nav a:hover,
+
+	nav a:hover {
+		color: var(--text);
+		background: var(--surface);
+		text-decoration: none;
+	}
+
 	nav a[aria-current='page'] {
-		color: var(--accent);
+		color: var(--text);
+		background: rgba(56, 189, 248, 0.12);
 	}
 </style>

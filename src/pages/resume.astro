@@ -1,23 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import { site } from '../data/site';
 ---
 
 <Layout title="Resume" description={`Resume — ${site.name}`}>
-	<article class="resume">
+	<header class="page-header">
+		<span class="section-label">CV</span>
 		<h1>Resume</h1>
-		<p class="muted">
-			{site.email} · {site.phone} ·
+		<p class="contact-bar muted">
+			<a href={site.links.email}>{site.email}</a>
+			<span>{site.phone}</span>
 			<a href={site.links.linkedin}>LinkedIn</a>
 		</p>
+	</header>
 
+	<article class="resume">
 		<section>
 			<h2>Summary</h2>
-			<p>
-				Senior Lead Data Engineer with 18+ years building analytics platforms on Snowflake,
-				dbt, Apache Airflow, Python, and AWS. Focus on governed semantic layers, large-scale
-				ELT, and production AI on data (Snowflake Cortex Analyst, Search, and Agents).
-			</p>
+			<div class="summary-box">
+				<p>
+					Senior Lead Data Engineer with 18+ years building analytics platforms on Snowflake,
+					dbt, Apache Airflow, Python, and AWS. Focus on governed semantic layers, large-scale
+					ELT, and production AI on data (Snowflake Cortex Analyst, Search, and Agents).
+				</p>
+			</div>
 		</section>
 
 		<section>
@@ -72,12 +79,15 @@ import { site } from '../data/site';
 
 		<section>
 			<h2>Education</h2>
-			<p>New York University — M.S., Computer Science</p>
+			<div class="role">
+				<h3>New York University</h3>
+				<p class="when">M.S., Computer Science</p>
+			</div>
 		</section>
 
 		<section>
 			<h2>Certifications</h2>
-			<ul>
+			<ul class="cert-list">
 				<li>SnowPro Core · SnowPro Advanced: Data Engineer</li>
 				<li>dbt Analytics Engineering Certification</li>
 				<li>AWS Solutions Architect – Associate · AWS Cloud Practitioner</li>
@@ -85,8 +95,6 @@ import { site } from '../data/site';
 			</ul>
 		</section>
 
-		<p class="muted">
-			For a detailed PDF, add <code>public/resume.pdf</code> and link it here.
-		</p>
+		<SocialLinks />
 	</article>
 </Layout>

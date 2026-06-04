@@ -3,19 +3,30 @@ import Layout from '../layouts/Layout.astro';
 import { posts, mediumProfile } from '../data/posts';
 ---
 
-<Layout title="Writing" description="Articles on Medium">
-	<h1>Writing</h1>
-	<p class="lead">
-		Articles on <a href={mediumProfile}>Medium @karthikrajashekaran</a>.
-	</p>
+<Layout title="Writing" description="Articles on dbt, Snowflake, and data engineering">
+	<header class="page-header">
+		<span class="section-label">Blog</span>
+		<h1>Writing</h1>
+		<p class="lead">
+			Deep dives on analytics engineering, Snowflake Cortex, dbt, and production AI on data.
+		</p>
+	</header>
 
 	<ul class="post-list">
-		{posts.map((post) => (
-			<li>
-				<a href={post.url} rel="noopener noreferrer">{post.title}</a>
-				<div class="post-meta">{post.date}</div>
-				{post.blurb && <p>{post.blurb}</p>}
-			</li>
-		))}
+		{
+			posts.map((post) => (
+				<li class="post-card">
+					<div class="post-meta">{post.date}</div>
+					<a class="title" href={post.url} rel="noopener noreferrer">
+						{post.title}
+					</a>
+					{post.blurb && <p>{post.blurb}</p>}
+				</li>
+			))
+		}
 	</ul>
+
+	<a class="medium-cta" href={mediumProfile} rel="noopener noreferrer">
+		All posts on Medium →
+	</a>
 </Layout>
