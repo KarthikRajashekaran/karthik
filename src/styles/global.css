@@ -203,59 +203,6 @@ p {
 	opacity: 0.85;
 }
 
-/* CTA cards */
-.cta-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-	gap: 1rem;
-	margin: 2rem 0 3rem;
-}
-
-.cta-card {
-	display: block;
-	padding: 1.35rem 1.5rem;
-	background: var(--gradient-subtle);
-	border: 1px solid var(--border);
-	border-radius: var(--radius-lg);
-	text-decoration: none;
-	color: inherit;
-	transition:
-		border-color 0.2s ease,
-		transform 0.2s ease,
-		box-shadow 0.2s ease;
-}
-
-.cta-card:hover {
-	border-color: rgba(56, 189, 248, 0.4);
-	transform: translateY(-2px);
-	box-shadow: var(--shadow);
-	text-decoration: none;
-}
-
-.cta-card h3 {
-	margin: 0 0 0.35rem;
-	color: var(--text);
-	font-size: 1.05rem;
-}
-
-.cta-card p {
-	margin: 0;
-	font-size: 0.9rem;
-	color: var(--muted);
-}
-
-.cta-card .arrow {
-	display: inline-block;
-	margin-top: 0.75rem;
-	font-size: 1.1rem;
-	color: var(--accent);
-	transition: transform 0.2s ease;
-}
-
-.cta-card:hover .arrow {
-	transform: translateX(4px);
-}
-
 /* Skills grid */
 .skills-grid {
 	display: grid;

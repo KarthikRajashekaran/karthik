@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import { site } from '../data/site';
 import { skillGroups } from '../data/skills';
-import { path } from '../lib/paths';
 ---
 
 <Layout>
@@ -17,24 +16,6 @@ import { path } from '../lib/paths';
 		</p>
 
 		<SocialLinks />
-
-		<div class="cta-grid">
-			<a class="cta-card" href={path('resume/')}>
-				<h3>Resume</h3>
-				<p>Experience, certifications, and background.</p>
-				<span class="arrow" aria-hidden="true">→</span>
-			</a>
-			<a class="cta-card" href={path('writing/')}>
-				<h3>Writing</h3>
-				<p>Articles on dbt, Snowflake, Cortex, and semantic layers.</p>
-				<span class="arrow" aria-hidden="true">→</span>
-			</a>
-			<a class="cta-card" href={site.links.github} rel="noopener noreferrer">
-				<h3>GitHub</h3>
-				<p>Open-source tools and data engineering projects.</p>
-				<span class="arrow" aria-hidden="true">→</span>
-			</a>
-		</div>
 	</section>
 
 	<section>
