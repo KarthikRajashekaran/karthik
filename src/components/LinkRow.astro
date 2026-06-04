@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site';
+
+const items = [
+	{ label: 'LinkedIn', href: site.links.linkedin },
+	{ label: 'GitHub', href: site.links.github },
+	{ label: 'Medium', href: site.links.medium },
+	{ label: 'Email', href: site.links.email },
+];
+---
+
+<ul class="link-row">
+	{items.map(({ label, href }) => (
+		<li>
+			<a href={href} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+				{label}
+			</a>
+		</li>
+	))}
+</ul>
+
+<style>
+	.link-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem 1.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 2rem;
+		font-weight: 500;
+	}
+</style>

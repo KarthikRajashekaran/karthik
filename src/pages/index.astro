@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkRow from '../components/LinkRow.astro';
+import { site } from '../data/site';
+import { skillGroups } from '../data/skills';
+import { path } from '../lib/paths';
+---
+
+<Layout>
+	<h1>{site.name}</h1>
+	<p class="lead">{site.title} — {site.tagline}</p>
+
+	<LinkRow />
+
+	{
+		site.about.map((paragraph) => (
+			<p>{paragraph}</p>
+		))
+	}
+
+	<h2>Skills</h2>
+	{
+		skillGroups.map((group) => (
+			<div class="skill-group">
+				<h3>{group.label}</h3>
+				<ul class="chips">
+					{group.items.map((item) => (
+						<li>{item}</li>
+					))}
+				</ul>
+			</div>
+		))
+	}
+
+	<h2>More</h2>
+	<p>
+		<a href={path('resume/')}>Resume</a> · <a href={path('writing/')}>Writing</a> ·
+		<a href={site.links.github}>GitHub projects</a>
+	</p>
+</Layout>

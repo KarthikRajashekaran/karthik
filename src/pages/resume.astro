@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+
+<Layout title="Resume" description={`Resume — ${site.name}`}>
+	<article class="resume">
+		<h1>Resume</h1>
+		<p class="muted">
+			{site.email} · {site.phone} ·
+			<a href={site.links.linkedin}>LinkedIn</a>
+		</p>
+
+		<section>
+			<h2>Summary</h2>
+			<p>
+				Senior Lead Data Engineer with 18+ years building analytics platforms on Snowflake,
+				dbt, Apache Airflow, Python, and AWS. Focus on governed semantic layers, large-scale
+				ELT, and production AI on data (Snowflake Cortex Analyst, Search, and Agents).
+			</p>
+		</section>
+
+		<section>
+			<h2>Experience</h2>
+
+			<div class="role">
+				<h3>Avalara — Senior Cloud Data Engineer</h3>
+				<p class="when">Jun 2021 – Present · Remote</p>
+				<ul>
+					<li>
+						Own Snowflake analytics pipelines and a multi-project dbt monorepo (2,900+ models)
+						across product, engineering, security, and operations domains.
+					</li>
+					<li>
+						Operate 100+ Airflow DAGs for dbt runs, ingestion, reporting, and platform automation.
+					</li>
+					<li>
+						Design dbt semantic views and Snowflake Intelligence semantic models for governed
+						natural-language analytics.
+					</li>
+					<li>
+						Build and operate domain-scoped Cortex Agents (Analyst, Search, custom tools) with
+						Slack integrations and observability marts.
+					</li>
+					<li>
+						Drive data quality (dbt tests, Great Expectations, Elementary) and mentor engineers on
+						SQL, semantic modeling, and agent patterns.
+					</li>
+				</ul>
+			</div>
+
+			<div class="role">
+				<h3>Vonage — Cloud Data Engineer</h3>
+				<p class="when">Jan 2018 – May 2021</p>
+				<ul>
+					<li>Migrated Teradata/SSIS workloads to Snowflake + ELT; improved performance and reliability.</li>
+					<li>Built Airflow DAGs and custom operators; integrated multi-source data on AWS.</li>
+				</ul>
+			</div>
+
+			<div class="role">
+				<h3>Earlier roles</h3>
+				<p class="when">2004 – 2017</p>
+				<ul>
+					<li>
+						New York Times, BNY Mellon, Emblem Health, Guardian, Cognizant, Infosys, Tech Mahindra
+						— ETL/BI, Informatica, Oracle, and analytics delivery.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<h2>Education</h2>
+			<p>New York University — M.S., Computer Science</p>
+		</section>
+
+		<section>
+			<h2>Certifications</h2>
+			<ul>
+				<li>SnowPro Core · SnowPro Advanced: Data Engineer</li>
+				<li>dbt Analytics Engineering Certification</li>
+				<li>AWS Solutions Architect – Associate · AWS Cloud Practitioner</li>
+				<li>Apache Airflow · Cloudera Spark and Hadoop Developer</li>
+			</ul>
+		</section>
+
+		<p class="muted">
+			For a detailed PDF, add <code>public/resume.pdf</code> and link it here.
+		</p>
+	</article>
+</Layout>

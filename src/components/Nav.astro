@@ -1,0 +1,69 @@
+---
+import { site } from '../data/site';
+import { path } from '../lib/paths';
+
+const links = [
+	{ href: path(), label: 'Home' },
+	{ href: path('resume/'), label: 'Resume' },
+	{ href: path('writing/'), label: 'Writing' },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header class="nav">
+	<a class="brand" href={path()}>{site.name.split(' ')[0]}</a>
+	<nav aria-label="Main">
+		<ul>
+			{
+				links.map(({ href, label }) => (
+					<li>
+						<a
+							href={href}
+							aria-current={current === href || current === href.replace(/\/$/, '') + '/' ? 'page' : undefined}
+						>
+							{label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	.nav {
+		max-width: var(--max);
+		margin: 0 auto;
+		padding: 1.25rem 1.25rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.brand {
+		font-weight: 650;
+		color: var(--text);
+		text-decoration: none;
+	}
+	.brand:hover {
+		color: var(--accent);
+		text-decoration: none;
+	}
+	nav ul {
+		display: flex;
+		gap: 1.25rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 0.9375rem;
+	}
+	nav a {
+		color: var(--muted);
+		text-decoration: none;
+	}
+	nav a:hover,
+	nav a[aria-current='page'] {
+		color: var(--accent);
+	}
+</style>

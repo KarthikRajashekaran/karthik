@@ -1,0 +1,176 @@
+:root {
+	--bg: #fafaf9;
+	--surface: #ffffff;
+	--text: #1c1917;
+	--muted: #57534e;
+	--accent: #0d9488;
+	--accent-hover: #0f766e;
+	--border: #e7e5e4;
+	--max: 42rem;
+	--font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font);
+	font-size: 1.0625rem;
+	line-height: 1.6;
+	color: var(--text);
+	background: var(--bg);
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--accent-hover);
+	text-decoration: underline;
+}
+
+main {
+	max-width: var(--max);
+	margin: 0 auto;
+	padding: 2rem 1.25rem 4rem;
+}
+
+h1 {
+	font-size: 1.75rem;
+	font-weight: 650;
+	letter-spacing: -0.02em;
+	margin: 0 0 0.25rem;
+}
+
+h2 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin: 2.5rem 0 0.75rem;
+	color: var(--text);
+}
+
+h3 {
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 1.5rem 0 0.5rem;
+}
+
+p {
+	margin: 0 0 1rem;
+	color: var(--muted);
+}
+
+.lead {
+	font-size: 1.125rem;
+	color: var(--muted);
+	margin-bottom: 1.5rem;
+}
+
+.muted {
+	color: var(--muted);
+	font-size: 0.9375rem;
+}
+
+.chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.chips li {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 0.25rem 0.75rem;
+	font-size: 0.875rem;
+	color: var(--text);
+}
+
+.skill-group {
+	margin-bottom: 1.25rem;
+}
+
+.skill-group h3 {
+	margin-top: 0;
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--muted);
+}
+
+.post-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.post-list li {
+	border-bottom: 1px solid var(--border);
+	padding: 1rem 0;
+}
+
+.post-list li:first-child {
+	padding-top: 0;
+}
+
+.post-list a {
+	font-weight: 500;
+	color: var(--text);
+}
+
+.post-list a:hover {
+	color: var(--accent);
+}
+
+.post-meta {
+	font-size: 0.875rem;
+	color: var(--muted);
+}
+
+.resume section {
+	margin-bottom: 2rem;
+}
+
+.resume ul {
+	margin: 0;
+	padding-left: 1.25rem;
+	color: var(--muted);
+}
+
+.resume li {
+	margin-bottom: 0.5rem;
+}
+
+.resume .role {
+	margin-bottom: 1.5rem;
+}
+
+.resume .role h3 {
+	margin: 0 0 0.15rem;
+	color: var(--text);
+}
+
+.resume .role .when {
+	font-size: 0.875rem;
+	color: var(--muted);
+	margin: 0 0 0.5rem;
+}
+
+.empty {
+	font-style: italic;
+	color: var(--muted);
+}
