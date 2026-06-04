@@ -1,16 +1,6 @@
 ---
 import { site } from '../data/site';
 import { path } from '../lib/paths';
-
-const links = [
-	{ href: path(), label: 'Home' },
-	{ href: path('resume/'), label: 'Resume' },
-	{ href: path('writing/'), label: 'Writing' },
-];
-
-const p = Astro.url.pathname;
-const page =
-	p.includes('/resume') ? 'resume' : p.includes('/writing') ? 'writing' : 'home';
 ---
 
 <header class="nav-wrap">
@@ -19,23 +9,6 @@ const page =
 			<span class="brand-mark" aria-hidden="true">K</span>
 			<span>{site.name.split(' ')[0]}</span>
 		</a>
-		<nav aria-label="Main">
-			<ul>
-				{
-					links.map(({ href, label }) => {
-						const key =
-							label === 'Home' ? 'home' : label === 'Resume' ? 'resume' : 'writing';
-						return (
-							<li>
-								<a href={href} aria-current={page === key ? 'page' : undefined}>
-									{label}
-								</a>
-							</li>
-						);
-					})
-				}
-			</ul>
-		</nav>
 	</div>
 </header>
 
@@ -56,7 +29,6 @@ const page =
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		gap: 1rem;
 	}
 
