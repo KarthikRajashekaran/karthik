@@ -1,25 +1,25 @@
 :root {
-	--bg: #080c14;
-	--bg-elevated: #0f1623;
-	--surface: rgba(255, 255, 255, 0.04);
-	--surface-hover: rgba(255, 255, 255, 0.07);
-	--text: #f1f5f9;
-	--text-soft: #cbd5e1;
-	--muted: #94a3b8;
-	--accent: #38bdf8;
-	--accent-2: #818cf8;
-	--accent-3: #34d399;
-	--gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+	--bg: #f8fafc;
+	--bg-elevated: #ffffff;
+	--surface: #f1f5f9;
+	--surface-hover: #e2e8f0;
+	--text: #0f172a;
+	--text-soft: #334155;
+	--muted: #64748b;
+	--accent: #0284c7;
+	--accent-2: #4f46e5;
+	--accent-3: #059669;
+	--gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #059669 100%);
 	--gradient-subtle: linear-gradient(
 		135deg,
-		rgba(56, 189, 248, 0.15) 0%,
-		rgba(129, 140, 248, 0.12) 50%,
-		rgba(52, 211, 153, 0.08) 100%
+		rgba(2, 132, 199, 0.08) 0%,
+		rgba(79, 70, 229, 0.06) 50%,
+		rgba(5, 150, 105, 0.05) 100%
 	);
-	--border: rgba(148, 163, 184, 0.15);
-	--border-strong: rgba(148, 163, 184, 0.25);
-	--shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-	--shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
+	--border: rgba(15, 23, 42, 0.08);
+	--border-strong: rgba(15, 23, 42, 0.14);
+	--shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+	--shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.1);
 	--radius: 12px;
 	--radius-lg: 20px;
 	--max: 52rem;
@@ -47,9 +47,9 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	background:
-		radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.18), transparent),
-		radial-gradient(ellipse 60% 40% at 100% 0%, rgba(129, 140, 248, 0.12), transparent),
-		radial-gradient(ellipse 50% 30% at 0% 100%, rgba(52, 211, 153, 0.08), transparent),
+		radial-gradient(ellipse 80% 50% at 50% -20%, rgba(2, 132, 199, 0.12), transparent),
+		radial-gradient(ellipse 60% 40% at 100% 0%, rgba(79, 70, 229, 0.08), transparent),
+		radial-gradient(ellipse 50% 30% at 0% 100%, rgba(5, 150, 105, 0.06), transparent),
 		var(--bg);
 }
 
@@ -175,18 +175,20 @@ p {
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.6rem 1.1rem;
-	background: var(--surface);
+	background: var(--bg-elevated);
 	border: 1px solid var(--border);
 	border-radius: 999px;
 	color: var(--text-soft);
 	font-size: 0.9rem;
 	font-weight: 500;
 	text-decoration: none;
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 	transition:
 		background 0.2s ease,
 		border-color 0.2s ease,
 		color 0.2s ease,
-		transform 0.15s ease;
+		transform 0.15s ease,
+		box-shadow 0.2s ease;
 }
 
 .social-row a:hover {
@@ -195,6 +197,7 @@ p {
 	color: var(--text);
 	text-decoration: none;
 	transform: translateY(-1px);
+	box-shadow: var(--shadow);
 }
 
 .social-row a svg {
@@ -215,11 +218,15 @@ p {
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 1.15rem 1.25rem;
-	transition: border-color 0.2s ease;
+	box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
 }
 
 .skill-card:hover {
 	border-color: var(--border-strong);
+	box-shadow: var(--shadow);
 }
 
 .skill-card h3 {
@@ -256,6 +263,7 @@ p {
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
 	padding: 1.5rem 1.75rem;
+	box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 	margin-bottom: 2rem;
 }
 
@@ -289,14 +297,17 @@ p {
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 1.25rem 1.5rem;
+	box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 	transition:
 		border-color 0.2s ease,
-		transform 0.2s ease;
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
 }
 
 .post-card:hover {
-	border-color: rgba(129, 140, 248, 0.35);
+	border-color: rgba(79, 70, 229, 0.25);
 	transform: translateX(4px);
+	box-shadow: var(--shadow);
 }
 
 .post-card a.title {
@@ -332,18 +343,20 @@ p {
 	margin-top: 1.25rem;
 	padding: 0.7rem 1.35rem;
 	background: var(--gradient);
-	color: #0f172a !important;
+	color: #ffffff !important;
 	font-weight: 600;
 	font-size: 0.95rem;
 	border-radius: 999px;
 	text-decoration: none !important;
-	transition: opacity 0.2s ease, transform 0.15s ease;
+	box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+	transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .resume-download:hover {
-	opacity: 0.92;
+	opacity: 0.95;
 	transform: translateY(-1px);
-	color: #0f172a !important;
+	box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+	color: #ffffff !important;
 }
 
 .medium-cta {
@@ -353,17 +366,18 @@ p {
 	margin-top: 2rem;
 	padding: 0.75rem 1.25rem;
 	background: var(--gradient);
-	color: #0f172a !important;
+	color: #ffffff !important;
 	font-weight: 600;
 	border-radius: 999px;
 	text-decoration: none !important;
+	box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
 	transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
 .medium-cta:hover {
-	opacity: 0.92;
+	opacity: 0.95;
 	transform: translateY(-1px);
-	color: #0f172a !important;
+	color: #ffffff !important;
 }
 
 /* Resume */
@@ -413,6 +427,7 @@ p {
 	border-radius: var(--radius);
 	padding: 1.25rem 1.5rem;
 	margin-bottom: 1rem;
+	box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .resume .role h3 {
