@@ -325,6 +325,27 @@ p {
 	font-size: 0.9rem;
 }
 
+.resume-download {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 1.25rem;
+	padding: 0.7rem 1.35rem;
+	background: var(--gradient);
+	color: #0f172a !important;
+	font-weight: 600;
+	font-size: 0.95rem;
+	border-radius: 999px;
+	text-decoration: none !important;
+	transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.resume-download:hover {
+	opacity: 0.92;
+	transform: translateY(-1px);
+	color: #0f172a !important;
+}
+
 .medium-cta {
 	display: inline-flex;
 	align-items: center;

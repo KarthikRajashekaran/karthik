@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import { site } from '../data/site';
+import { path } from '../lib/paths';
+
+const resumeHref = path(site.resume.file);
 ---
 
 <Layout title="Resume" description={`Resume — ${site.name}`}>
@@ -13,6 +16,13 @@ import { site } from '../data/site';
 			<span>{site.phone}</span>
 			<a href={site.links.linkedin}>LinkedIn</a>
 		</p>
+		<a
+			class="resume-download"
+			href={resumeHref}
+			download={site.resume.downloadName}
+		>
+			Download resume (Word)
+		</a>
 	</header>
 
 	<article class="resume">

@@ -23,7 +23,8 @@ Open http://localhost:4321/karthik/ (base path matches production).
 | `src/data/site.ts` | Name, links (GitHub, Medium, email) |
 | `src/data/skills.ts` | Skill groups on home |
 | `src/data/posts.ts` | Medium post list |
-| `src/pages/resume.astro` | Resume content (or add `public/resume.pdf`) |
+| `public/resume.doc` | Word resume (download link on home + resume page) |
+| `src/pages/resume.astro` | Online resume summary |
 
 ## Deploy to GitHub Pages
 

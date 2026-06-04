@@ -15,4 +15,9 @@ export const site = {
 		medium: 'https://medium.com/@karthikrajashekaran',
 		email: 'mailto:karthik.rajashekaran@gmail.com',
 	},
+	/** File in /public — replace resume.doc when you update the Word document */
+	resume: {
+		file: 'resume.doc',
+		downloadName: 'Karthik_Rajashekaran_Resume.doc',
+	},
 } as const;
